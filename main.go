@@ -1,6 +1,6 @@
 package main
 
-import "smltool/cmd"
+import "github.com/KevenGoncalves/samora-lang-tool/cmd"
 
 func main() {
 	cmd.Execute()
