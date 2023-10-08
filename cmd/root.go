@@ -1,15 +1,21 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/KevenGoncalves/samora-lang-tool/internal/handler"
+	"github.com/spf13/cobra"
 )
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "sml",
 	Short: "samora lang tool",
-	Long:  `A tool to manage the samora lang`,
+	Run:   handler.RunRoot,
+	Long: `
+A tool to manage the samora lang
+To enter in REPL mode only run sml
+`,
 }
 
 func Execute() {
@@ -17,8 +23,4 @@ func Execute() {
 	if err != nil {
 		os.Exit(1)
 	}
-}
-
-func init() {
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
